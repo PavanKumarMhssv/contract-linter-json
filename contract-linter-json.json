@@ -17,7 +17,8 @@
   "host": "api.someurl.com",
   "basePath": "/api/v3",
   "schemes": [
-    "https"
+    "https",
+    "http"
   ],
   "consumes": [
     "application/json",
@@ -305,39 +306,6 @@
   },
   "definitions": {
     "Error": {
-      "type": "object",
-      "required": [
-        "code",
-        "title"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "example": "8eaeac83-edd8-4977-880d-053b42e827e0",
-          "description": "A unique identifier for this particular occurrence of the problem. Used to troubleshoot this occurance of this error."
-        },
-        "code": {
-          "type": "string",
-          "example": "XB400",
-          "description": "An application-specific error code, expressed as a string value."
-        },
-        "title": {
-          "type": "string",
-          "example": "User First Name cannot be empty",
-          "description": "A short, human-readable summary of the problem that SHOULD NOT change from occurrence to occurrence of the problem, except for purposes of localization."
-        },
-        "detail": {
-          "type": "string",
-          "example": "Enter a value in the First Name field. If you do not know the first name then enter a space. The First Name field cannot be submitted with a null.",
-          "description": "A human-readable explanation specific to this occurrence of the problem. Like title, this field’s value can be localized."
-        },
-        "Links": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Link"
-          }
-        }
-      }
     },
     "Errors": {
       "type": "array",
