@@ -58,9 +58,7 @@
           }
         ],
         "responses": {
-          "200": {
-            "$ref": "#/definitions/Pet"
-          },
+          "200": {},
           "400": {
             "$ref": "#/responses/BadRequest"
           },
