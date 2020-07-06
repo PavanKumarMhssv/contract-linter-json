@@ -39,7 +39,7 @@
         "operationId": "findPets",
         "parameters": [
           {
-            "$ref": 
+            "$ref": "#/parameters/AuthorizationHeader"
           },
           {
             "$ref": "#/parameters/AcceptHeader"
@@ -432,8 +432,7 @@
           "pattern": "^[0-9]{6,6}$"
         }
       },
-      "allOf": [
-      ]
+      "allOf": []
     },
     "PetsCollection": {
       "allOf": [
