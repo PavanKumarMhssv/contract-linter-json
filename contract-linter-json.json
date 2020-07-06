@@ -433,9 +433,6 @@
         }
       },
       "allOf": [
-        {
-          "$ref": "#/definitions/Paging"
-        }
       ]
     },
     "PetsCollection": {
