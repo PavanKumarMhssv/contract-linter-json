@@ -17,8 +17,7 @@
   "host": "api.someurl.com",
   "basePath": "/api/v3",
   "schemes": [
-    "https",
-    "http"
+    "https"
   ],
   "consumes": [
     "application/json",
