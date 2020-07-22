@@ -17,8 +17,7 @@
   "host": "api.someurl.com",
   "basePath": "/api/v3",
   "schemes": [
-    "https",
-    "http"
+    "https"
   ],
   "consumes": [
     "application/json",
@@ -58,7 +57,9 @@
           }
         ],
         "responses": {
-          "200": {},
+          "200": {
+            "$ref":"#/definitions/Pet"
+          },
           "400": {
             "$ref": "#/responses/BadRequest"
           },
@@ -67,6 +68,9 @@
           },
           "403": {
             "$ref": "#/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/responses/NotFound"
           },
           "429": {
             "$ref": "#/responses/RequestLimitExceeded"
@@ -136,7 +140,7 @@
             "$ref": "#/responses/Unauthorized"
           },
           "404": {
-            "$ref": "#/responses/Unauthorized"
+            "$ref": "#/responses/NotFound"
           },
           "429": {
             "$ref": "#/responses/RequestLimitExceeded"
@@ -175,6 +179,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "$ref":"#/definitions/Pet"
+          },
           "400": {
             "$ref": "#/responses/BadRequest"
           },
@@ -304,6 +311,9 @@
   },
   "definitions": {
     "Error": {
+      "type":"string",
+      "description":"Holds the reson for error.",
+      "example":"Syntax validation faliure."
     },
     "Errors": {
       "type": "array",
@@ -430,7 +440,11 @@
           "pattern": "^[0-9]{6,6}$"
         }
       },
-      "allOf": []
+      "allOf": [
+        {
+          "$ref": "#/definitions/Pet"
+        }
+      ]
     },
     "PetsCollection": {
       "allOf": [
